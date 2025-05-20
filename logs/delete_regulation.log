@@ -1,0 +1,24 @@
+[2025-05-17 14:12:16.526556] 삭제 요청 - 파일명: regulation_test.pdf
+🗑️ 파일 삭제 완료: ./data/raw/regulation\regulation_test.pdf
+🧹 디렉토리 초기화 완료: ./data/processed/regulation
+🧹 디렉토리 초기화 완료: ./data/embeddings/regulation
+🧹 디렉토리 초기화 완료: ./vectordb/regulation_db
+🔄 regulation VectorDB 재구축 시작
+✅ regulation VectorDB 재구축 완료
+
+[2025-05-17 14:29:15.758046] 삭제 요청 - 파일명: ac32e5ea-698b-4a42-967f-44cc74e782b0.pdf
+🗑️ 파일 삭제 완료: ./data/raw/regulation\ac32e5ea-698b-4a42-967f-44cc74e782b0.pdf
+🧹 디렉토리 초기화 완료: ./data/processed/regulation
+🧹 디렉토리 초기화 완료: ./data/embeddings/regulation
+🧹 디렉토리 초기화 완료: ./vectordb/regulation_db
+🔄 regulation VectorDB 재구축 시작
+✅ regulation VectorDB 재구축 완료
+
+[2025-05-17 16:46:11.373280] 삭제 요청 - 파일명: 841b915e-591a-4ce2-859e-ee00fa9958e9.pdf
+🗑️ 파일 삭제 완료: ./data/raw/regulation\841b915e-591a-4ce2-859e-ee00fa9958e9.pdf
+🧹 디렉토리 초기화 완료: ./data/processed/regulation
+🧹 디렉토리 초기화 완료: ./data/embeddings/regulation
+🧹 디렉토리 초기화 완료: ./vectordb/regulation_db
+🔄 regulation VectorDB 재구축 시작
+✅ regulation VectorDB 재구축 완료
+
