@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.ipynb
+*.sh
+*.md
+*.yaml
+Dockerfile
+test_*.py
+logs/
+.env

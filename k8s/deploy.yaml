@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sk040-webserver
+  namespace: skala-practice
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: sk040-webserver
+  template:
+    metadata:
+      labels:
+        app: sk040-webserver
+    spec:
+      serviceAccountName: default
+      volumes:
+        - name: app-volume
+          emptyDir: {}
+      initContainers:
+        - name: install-packages
+          image: python:3.11-slim
+          command:
+            - sh
+            - -c
+            - |
+              pip install -r /app/requirements.txt -t /app/psc/libs
+          volumeMounts:
+            - name: app-volume
+              mountPath: /app
+      containers:
+        - name: webserver
+          image: amdp-registry.skala-ai.com/skala25a/sk040-webserver:1.0.0
+          imagePullPolicy: Always
+          volumeMounts:
+            - name: app-volume
+              mountPath: /app
+          envFrom:
+            - secretRef:
+                name: openai-secret
+          ports:
+            - containerPort: 8000
+          readinessProbe:
+            httpGet:
+              path: /docs
+              port: 8000
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          resources:
+            limits:
+              cpu: "500m"
+              memory: "512Mi"
+            requests:
+              cpu: "250m"
+              memory: "256Mi"

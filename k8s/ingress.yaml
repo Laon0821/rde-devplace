@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: sk040-cm-tls-ingress
+  namespace: skala-practice
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+spec:
+  ingressClassName: public-nginx
+  rules:
+    - host: sk040-tls.skala25a.project.skala-ai.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: sk040-webserver
+                port:
+                  number: 8000
+  tls:
+    - hosts:
+        - sk040-tls.skala25a.project.skala-ai.com
+      secretName: sk040-cm-auto-tls-secret
